@@ -1,6 +1,6 @@
 import { Movie } from "./Movie";
 
-export function Movies(props) {
+function Movies(props) {
   const { movies = [] } = props;
 
   return (
@@ -13,3 +13,5 @@ export function Movies(props) {
     </div>
   );
 }
+
+export { Movies };
