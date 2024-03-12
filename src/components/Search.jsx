@@ -10,7 +10,7 @@ function Search(props) {
 
   const [search, setSearch] = useState("");
   const [type, setType] = useState("all");
-  const noValueMessge = "please enter your search value below";
+  const noValueMessge = "please enter value below";
 
   const handleKey = (event) => {
     if (event.key === "Enter") {
