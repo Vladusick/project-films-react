@@ -9,6 +9,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 function Main() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
+  let moviesIsEmpty = !movies;
 
   const searchMovies = (str, type = "all") => {
     setLoading(true);
@@ -43,7 +44,7 @@ function Main() {
 
   return (
     <main className="container content">
-      <Search searchMovies={searchMovies} />
+      <Search searchMovies={searchMovies} moviesIsEmpty={moviesIsEmpty} />
       {loading ? <Preloader /> : <Movies movies={movies} />}
     </main>
   );

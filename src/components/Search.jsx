@@ -5,10 +5,12 @@ function Search(props) {
   const {
     // Function.prototype - функция по умолчанию, если пропсы будут пустыми
     searchMovies = Function.prototype,
+    moviesIsEmpty,
   } = props;
 
   const [search, setSearch] = useState("");
   const [type, setType] = useState("all");
+  const noValueMessge = "please enter your search value below";
 
   const handleKey = (event) => {
     if (event.key === "Enter") {
@@ -24,6 +26,11 @@ function Search(props) {
   return (
     <div className="row">
       <div className="input-field">
+        <div style={{ minHeight: "22px" }}>
+          {moviesIsEmpty && search === "" && (
+            <span style={{ color: "red" }}>{noValueMessge}</span>
+          )}
+        </div>
         <input
           className="validate"
           placeholder="search"
@@ -34,6 +41,7 @@ function Search(props) {
         />
         <button
           className="btn search-btn"
+          style={{ minHeight: "50px" }}
           onClick={() => searchMovies(search, type)}
         >
           Search
