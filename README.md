@@ -1,4 +1,4 @@
-Movies (Basic React project)
+Movies (Simple React project)
 
 Функционал:
 - Можно найти фильмы по поиску
